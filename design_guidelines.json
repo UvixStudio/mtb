@@ -1,0 +1,117 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury / Cinematic) mixed with gamified tech",
+  "design_philosophy": "A Gamified smooth low poly game theme acting as a portfolio for an experienced creative director/technologist. Balances an immersive 3D scroll-driven sequence with clean, high-end typography and UX.",
+  "colors": {
+    "background": {
+      "base": "#0B121A",
+      "surface": "#131C26",
+      "surface_glass": "rgba(19, 28, 38, 0.7)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#94A3B8",
+      "muted": "#64748B"
+    },
+    "brand": {
+      "primary": "#FACC15",
+      "primary_glow": "rgba(250, 204, 21, 0.5)"
+    },
+    "checkpoints": {
+      "01_about": "#FACC15",
+      "02_director": "#C084FC",
+      "03_ai": "#22D3EE",
+      "04_projects": "#4ADE80"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "'Unbounded', sans-serif",
+      "body": "'Manrope', sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter uppercase font-black",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight uppercase font-bold",
+      "h3": "text-xl sm:text-2xl tracking-tight font-bold",
+      "body": "text-base leading-relaxed font-light",
+      "label": "text-sm tracking-[0.2em] uppercase font-bold"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-6 sm:px-8",
+    "section_padding": "py-24 sm:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6",
+    "radius": "rounded-none sm:rounded-md",
+    "mobile_strategy": "Stack sections vertically. Keep the scroll trail as a straight vertical line connecting milestones on the left edge of the screen. Throttle frame scrubbing performance."
+  },
+  "key_components": {
+    "hero": {
+      "layout": "h-screen w-full relative flex flex-col justify-center items-start z-10",
+      "greeting": "text-white 'Hi! I\\'m ' with 'Yuval Cohen' in text-[#FACC15]",
+      "animated_typography": "Slot-machine vertical flip using framer-motion AnimatePresence. Roles: CREATIVE TECHNOLOGIST, CREATIVE DIRECTOR, PRODUCER, AI & 3D SPECIALIST, MTB RIDER.",
+      "ctas": "Two buttons. Primary: Download CV (Solid Yellow, Black Text). Secondary: Let's Talk (Outline White, Hover Yellow).",
+      "scroll_indicator": "Center-bottom MTB cleat shoe + bicycle pedal SVG with continuous rotation and 'Let\\'s Ride!' text. White glowing color."
+    },
+    "journey_panel": {
+      "position": "fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4",
+      "design": "Floating wireframe mountain map with a yellow SVG track (`path`) that fills using framer-motion `useScroll`. Includes 4 colored flags mapping to the checkpoints."
+    },
+    "canvas_sequence": {
+      "behavior": "Sticky `h-screen` background behind all content. 241 frames scrubbed based on `scrollYProgress`. Overlaid with a subtle vignette/gradient (`bg-black/40` or gradient) to ensure text legibility."
+    },
+    "capability_badges": {
+      "design": "Glowing borders matching the checkpoint colors. Active state gets a `box-shadow` glow.",
+      "animation": "Spring staggered entrance (`whileInView`)."
+    },
+    "selected_works": {
+      "layout": "Asymmetric Bento Grid (Tetris Mode A). 1 hero project (`col-span-12 md:col-span-8 row-span-2`), secondary projects (`col-span-4`), narrow projects.",
+      "interaction": "Hover triggers image scale-up (`scale-105`) and staggered tag reveals."
+    },
+    "tools_marquee": {
+      "design": "Monochrome or glowing tool logos slowly sliding infinitely. Use `react-fast-marquee`."
+    },
+    "contact_modal": {
+      "trigger": "Let's Talk button or Campfire trailhead CTA.",
+      "design": "Shadcn Dialog. Dark surface `#131C26`, yellow thin borders, sharp corners. Professional and popup-blocker safe."
+    }
+  },
+  "motion_guidelines": {
+    "scroll": "MUST use `lenis` for smooth momentum scrolling to make the frame-scrubbing feel premium and heavy.",
+    "reveal": "All text and sections use `whileInView` with a slow, damped spring (`type: 'spring', damping: 20, stiffness: 100`).",
+    "hover": "Buttons have a slight lift (`-translate-y-1`) and border color transition."
+  },
+  "media": {
+    "projects": [
+      {
+        "url": "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjcmVhdGl2ZSUyMHRlY2glMjBwb3J0Zm9saW8lMjBwcm9qZWN0fGVufDB8fHx8MTc4MDg2MjQ4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Project Hero Image - Web/Tech UI"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1682056598904-9aa7ea5e8991?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjcmVhdGl2ZSUyMHRlY2glMjBwb3J0Zm9saW8lMjBwcm9qZWN0fGVufDB8fHx8MTc4MDg2MjQ4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Project Grid Image - Creative Laptop Setup"
+      },
+      {
+        "url": "https://images.pexels.com/photos/37356604/pexels-photo-37356604.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Project Grid Image - Creative Portfolio Showcase"
+      }
+    ],
+    "background_fallback": [
+      {
+        "url": "https://images.unsplash.com/photo-1638824075317-52d01dfa0605?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBtb3VudGFpbiUyMGJpa2luZyUyMG5pZ2h0fGVufDB8fHx8MTc4MDg2MjQ4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Fallback cinematic mountain biking night image in case 241 frames are not available."
+      }
+    ]
+  },
+  "testing": {
+    "attributes": "All interactive elements must include `data-testid` (e.g., `data-testid=\"download-cv-button\"`, `data-testid=\"lets-talk-button\"`, `data-testid=\"contact-modal-submit\"`)."
+  },
+  "dependencies": {
+    "required": [
+      "framer-motion",
+      "lucide-react",
+      "lenis",
+      "react-fast-marquee",
+      "@radix-ui/react-dialog"
+    ]
+  }
+}
