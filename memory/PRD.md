@@ -12,7 +12,17 @@ Premium one-page portfolio for **Yuval Cohen — Creative Technologist, Creative
 - Fonts: Unbounded (display) + Manrope (body). Design tokens in `index.css` + `tailwind.config.js`.
 
 ## Implemented (2026-06-07)
-- **Cinematic Ride**: sticky canvas, 241 frames scrubbed across a 560vh scroll; hero overlay + 4 reveal checkpoint cards.
+- **Cinematic Ride**: sticky canvas, 241 frames scrubbed across scroll; clean hero overlay (floating checkpoint cards removed in redesign).
+
+### Redesign v2 (2026-06-07) — "Continuous Trail World"
+Client (Creative Director) feedback: below the hero the site looked like a generic AI site, too colorful, projects were a boring grid with no link to the trail/nature. Reworked so the WHOLE page stays in the low-poly mountain-trail world:
+- New **TrailBand** component: each section is full-bleed with a hand-picked ride frame as a parallax background (About=frame20 forest, Experience=100 bridge, Tools/AI=160 river/canyon, Works=200 downhill, Connect=241 trailhead) + dark scrims for legibility.
+- **About** capabilities → sporty **hexagon badges** (white/yellow solid icons) on a dashed skill-trail.
+- **Experience** → **wooden signposts** on a vertical trail line.
+- **Tools/AI** → glowing cyan crystal nodes + toned-down marquees.
+- **Selected Works** → **parallax 'trail marker' cards** (3 columns, scroll-offset) instead of a flat grid.
+- **Connect** → campfire trailhead band.
+- Palette toned down to near-black + yellow dominant; checkpoint colors used sparingly. Verified: iteration_2 100% pass, zero console/runtime errors, mobile no overflow.
 - **Hero**: "Hi! I'm Yuval Cohen", slot-machine rotating roles, tagline, **Download CV** + **Let's Talk** CTAs, animated "Let's Ride!" pedal SVG.
 - **Floating Journey panel** (desktop) with flags, fill track + wireframe mountain progress; slim top progress bar on mobile.
 - **About** (bio, quote, animated stat count-ups, 5 capability nodes), **Experience** (4 milestone stations on a trail line), **AI & Innovation / Tools** (dual marquees of real tools), **Selected Works** (asymmetric bento, 9 real projects, hover reveal), **Connect** (campfire CTA + contact modal).
