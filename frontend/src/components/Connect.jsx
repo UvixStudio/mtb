@@ -2,20 +2,21 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, MapPin, Music2, ArrowRight } from "lucide-react";
 import { PROFILE } from "@/data/content";
 import { Reveal } from "@/components/Primitives";
+import TrailBand from "@/components/TrailBand";
 
 function Campfire() {
     return (
         <div className="relative grid place-items-center">
             <motion.div
-                className="absolute h-24 w-24 rounded-full"
+                className="absolute h-28 w-28 rounded-full"
                 style={{
                     background:
-                        "radial-gradient(circle, rgba(250,204,21,0.35), transparent 70%)",
+                        "radial-gradient(circle, rgba(250,204,21,0.4), transparent 70%)",
                 }}
-                animate={{ opacity: [0.5, 0.9, 0.5], scale: [1, 1.12, 1] }}
+                animate={{ opacity: [0.5, 0.95, 0.5], scale: [1, 1.14, 1] }}
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             />
-            <svg width="74" height="74" viewBox="0 0 64 64" className="relative">
+            <svg width="78" height="78" viewBox="0 0 64 64" className="relative">
                 <motion.path
                     d="M32 8 C26 18 38 22 32 30 C40 26 42 16 40 12 C46 20 48 34 40 44 C46 42 50 36 50 36 C52 46 44 56 32 56 C20 56 12 46 16 34 C18 40 22 42 24 42 C18 32 22 16 32 8 Z"
                     fill="url(#flame)"
@@ -44,34 +45,33 @@ export default function Connect() {
         window.dispatchEvent(new CustomEvent("open-contact"));
 
     return (
-        <section
+        <TrailBand
             id="connect"
-            className="relative overflow-hidden bg-ink py-28 sm:py-36"
-            data-testid="connect-section"
+            frame={241}
+            scrim="bottom"
+            tint="rgba(8,6,4,0.72)"
+            minH="min-h-screen"
         >
-            {/* ambient glow */}
-            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/8 blur-[120px]" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-[130px]" />
 
-            <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
+            <div className="relative mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center sm:px-8">
                 <Reveal>
-                    <div className="flex justify-center">
-                        <Campfire />
-                    </div>
+                    <Campfire />
                 </Reveal>
                 <Reveal delay={0.1}>
-                    <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-white/50">
+                    <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-white/55">
                         The summit — let&apos;s connect
                     </p>
                 </Reveal>
                 <Reveal delay={0.16}>
-                    <h2 className="mt-4 font-display text-4xl font-black uppercase leading-tight tracking-tighter text-white sm:text-6xl">
+                    <h2 className="mt-4 font-display text-4xl font-black uppercase leading-tight tracking-tighter text-white drop-shadow-[0_4px_14px_rgba(0,0,0,0.7)] sm:text-6xl">
                         Ready for the
                         <br />
                         <span className="text-gradient-brand">next trail?</span>
                     </h2>
                 </Reveal>
                 <Reveal delay={0.22}>
-                    <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/65">
+                    <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/70">
                         Whether it&apos;s creative direction, AI-driven production or a
                         wild 3D idea — bring it to the campfire. Let&apos;s build something
                         that makes an impact.
@@ -86,12 +86,16 @@ export default function Connect() {
                             className="group inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-ink transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_36px_-10px_rgba(250,204,21,0.7)]"
                         >
                             Let&apos;s Talk
-                            <ArrowRight size={17} strokeWidth={2.5} className="transition-transform group-hover:translate-x-1" />
+                            <ArrowRight
+                                size={17}
+                                strokeWidth={2.5}
+                                className="transition-transform group-hover:translate-x-1"
+                            />
                         </button>
                         <a
                             href={`mailto:${PROFILE.email}`}
                             data-testid="connect-email"
-                            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:-translate-y-0.5 hover:border-brand hover:text-brand"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/30 px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand hover:text-brand"
                         >
                             <Mail size={17} strokeWidth={2.5} />
                             {PROFILE.email}
@@ -100,7 +104,7 @@ export default function Connect() {
                 </Reveal>
 
                 <Reveal delay={0.34}>
-                    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-white/55">
+                    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
                         <a
                             href={PROFILE.linkedin}
                             target="_blank"
@@ -122,13 +126,13 @@ export default function Connect() {
                         </span>
                     </div>
                 </Reveal>
-            </div>
 
-            <div className="relative mt-20 border-t border-white/10 pt-8 text-center">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/35">
-                    © {new Date().getFullYear()} Yuval Cohen · Creative Technologist · The journey continues
-                </p>
+                <Reveal delay={0.4}>
+                    <p className="mt-16 text-xs uppercase tracking-[0.2em] text-white/35">
+                        © {new Date().getFullYear()} Yuval Cohen · The journey continues
+                    </p>
+                </Reveal>
             </div>
-        </section>
+        </TrailBand>
     );
 }

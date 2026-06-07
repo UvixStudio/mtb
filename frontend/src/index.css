@@ -4,9 +4,9 @@
 
 @layer base {
     :root {
-        --ink: #0b121a;
-        --ink-2: #0e1822;
-        --surface: #131c26;
+        --ink: #0a0a0a;
+        --ink-2: #0e0e0e;
+        --surface: #141414;
         --brand: #facc15;
         --cp-about: #facc15;
         --cp-director: #c084fc;
