@@ -62,3 +62,21 @@ export function CountUp({ value, suffix = "", duration = 1.6 }) {
         </span>
     );
 }
+
+export function TrailHeading({ n, label, color = "var(--brand)" }) {
+    return (
+        <div className="flex items-center gap-3">
+            <span
+                className="font-display text-sm font-extrabold tracking-widest"
+                style={{ color }}
+            >
+                {n}
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: color }} />
+            <h2 className="font-display text-3xl font-black uppercase tracking-tight text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)] sm:text-4xl lg:text-5xl">
+                {label}
+            </h2>
+        </div>
+    );
+}
+
